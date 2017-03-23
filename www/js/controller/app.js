@@ -1,4 +1,4 @@
-app.controller('AppController', function($scope) {
+myapp.controller('AppController', function($scope) {
     
     this.load = function(page) {
         console.log("AppController loading " + page);

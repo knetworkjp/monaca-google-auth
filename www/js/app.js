@@ -1,1 +1,1 @@
-var app = ons.bootstrap(['onsen']);
+var myapp = ons.bootstrap(['onsen']);

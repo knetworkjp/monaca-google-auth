@@ -1,4 +1,4 @@
-app.controller('KintaiController', function($scope) {
+myapp.controller('KintaiController', function($scope) {
     
     ons.ready(function() {
         console.log("KintaiController is ready!");

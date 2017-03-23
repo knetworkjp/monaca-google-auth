@@ -30,9 +30,23 @@
 <ons-splitter var="splitter">
 <ons-splitter-side var="left" side="left" width="150px" collapse swipeable page="view/menu.html">
 </ons-splitter-side>
-<ons-splitter-content var="content" page="view/tabbar.html">
+<ons-splitter-content var="content" page="tabnav.html">
 </ons-splitter-content>
 </ons-splitter>
+
+<ons-template id="tabnav.html">
+<ons-navigator var="tabNavigator" page="tabbar.html" ng-controller="TabController as tab">
+</ons-navigator> 
+</ons-template>
+
+<ons-template id="tabbar.html">
+    <ons-tabbar var="tabbar">
+        <ons-tab page="view/home.html" label="ホーム" icon="ion-home" active="true"></ons-tab>
+        <ons-tab page="view/calendar.html" label="カレンダー" icon="ion-ios-pricetag"></ons-tab>
+        <ons-tab page="view/kintai.html" label="勤怠管理" icon="ion-chatbox-working"></ons-tab>
+    </ons-tab>
+  </ons-tabbar>
+</ons-template>
 
 </body>
 </html>
