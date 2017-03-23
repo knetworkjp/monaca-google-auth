@@ -25,9 +25,9 @@
     
 </head>
 
-<body ng-controller="AppController as app">
+<body>
 
-<ons-splitter var="splitter">
+<ons-splitter var="splitter" ng-controller="AppController as app">
 <ons-splitter-side var="left" side="left" width="150px" collapse swipeable page="view/menu.html">
 </ons-splitter-side>
 <ons-splitter-content var="content" page="tabnav.html">
