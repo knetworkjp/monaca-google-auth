@@ -4,9 +4,22 @@
     <div class="center">ログイン</div>
   </ons-toolbar>
   <p></p>
+
   <ons-list>
     <ons-list-item>
-    <ons-button modifier="large" ng-click="login.login()">Googleでログイン</ons-button>
+      メールアドレス
+    </ons-list-item>
+    <ons-list-item>
+        <ons-input modifier="underbar" ng-model="login.mail" placeholder="メールアドレス" float></ons-input>@ef-4.co.jp
+    </ons-list-item>
+    <ons-list-item>
+      パスワード
+    </ons-list-item>
+    <ons-list-item>
+        <ons-input modifier="underbar" ng-model="login.password" placeholder="password" type="password" float></ons-input>
+    </ons-list-item>
+    <ons-list-item>
+    <ons-button modifier="large" ng-click="login.login()">ログイン</ons-button>
     </ons-list-item>
   </ons-list>
 

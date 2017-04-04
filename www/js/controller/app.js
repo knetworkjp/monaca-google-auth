@@ -22,34 +22,48 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
     
     this.tabchange = function($event) {
         console.log("AppController tabchange is called tabid = " + $event.index);
-        var user = null;
-        var userStr = localStorage.getItem('user');
-        if(userStr != null) {
-            user = eval('(' + userStr + ')');
-            console.log(user);
-            $scope.user = user;
-            this.test = 'test2';
-        }
-        if(user == null){
-            $scope.splitter.content.load('view/login.html');
-        }
-        if($event.index == 1) {
-            googleCalendar.listCalendars().then(function(response) {
-                console.log(response);
-            });
-        }
+        // var user = null;
+        // var userStr = localStorage.getItem('user');
+        // if(userStr != null) {
+        //     user = eval('(' + userStr + ')');
+        //     console.log(user);
+        //     $scope.user = user;
+        //     this.test = 'test2';
+        // }
+        // if(user == null){
+        //     $scope.splitter.content.load('view/login.html');
+        // }
+        // if($event.index == 1) {
+        //     googleCalendar.listCalendars().then(function(response) {
+        //         console.log(response);
+        //     });
+        // }
     };
     
     this.currentUser = googleLogin.currentUser;
 
     this.logout = function() {
-      localStorage.setItem('user', null);
+      // localStorage.setItem('user', null);
+      // $scope.splitter.content.load("tabbar.html");
       $scope.splitter.left.close();
-      $scope.splitter.content.load("tabbar.html");
+      firebase.auth().signOut();
     };
     
     ons.ready(function() {
-        console.log("googleLogin = " + googleLogin);
+        // console.log("googleLogin = " + googleLogin);
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+            console.log("firebase.auth().onAuthStateChanged!");
+          if (user) {
+            console.log("login uid = " + user.uid);
+            // ホーム画面に遷移
+            $scope.splitter.content.load('view/home.html');
+          } else {
+            console.log("not logged in.");
+            // ログイン画面に遷移
+            $scope.splitter.content.load('view/login.html');
+          } 
+        });
         console.log("AppController is ready!");
     });
     
