@@ -1,4 +1,4 @@
-<ons-p ng-controller="HomeController as home">
+<ons-page ng-controller="HomeController as home">
   <ons-toolbar>
     <div class="left">
      <ons-toolbar-button ng-click="app.toggle();"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
@@ -6,6 +6,8 @@
     <div class="center">Googole認証サンプル</div>
   </ons-toolbar>
 
-  <p style="padding-top: 100px; color: #999; text-align: center">Home Page Contents</p>
+  <p style="padding-top: 100px; color: #999; text-align: center">{{user.displayName}} さん。こんにちは。</p>
+  
+  <p style="padding-top: 100px; color: #999; text-align: center">{{now}} </p>
   
 </ons-page>
