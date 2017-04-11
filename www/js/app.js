@@ -11,12 +11,12 @@ ons.enableAutoStatusBarFill();
 
 // Initialize Firebase
 var config = {
-apiKey: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-authDomain: "XXXXXXXXXXXXX.firebaseapp.com",
-databaseURL: "https://xxxxxxxxxxxx.firebaseio.com",
-projectId: "kintaiapp-99999",
-storageBucket: "kintaiapp-99999.appspot.com",
-messagingSenderId: "999999999999"
+apiKey: "AIzaSyAAi3FXzbY4Jl2Ij1Zc7Qf4p45GZZXaGUM",
+authDomain: "kintaiapp-db93d.firebaseapp.com",
+databaseURL: "https://kintaiapp-db93d.firebaseio.com",
+projectId: "kintaiapp-db93d",
+storageBucket: "kintaiapp-db93d.appspot.com",
+messagingSenderId: "118236638197"
 };
 
 console.log(config);

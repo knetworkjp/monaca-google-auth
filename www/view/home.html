@@ -1,4 +1,5 @@
 <ons-page ng-controller="HomeController as home">
+
   <ons-toolbar>
     <div class="left">
      <ons-toolbar-button ng-click="app.toggle();"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
@@ -7,7 +8,10 @@
   </ons-toolbar>
 
   <p style="padding-top: 100px; color: #999; text-align: center">{{user.email}} さん。こんにちは。</p>
-  
+
+  <div id="panel" ng-show="app.isLogin()">
   <p style="padding-top: 100px; color: #999; text-align: center">{{now}} </p>
-  
+  </div>
+
 </ons-page>
+

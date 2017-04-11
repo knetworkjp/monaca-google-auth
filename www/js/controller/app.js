@@ -1,5 +1,16 @@
 myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'googleCalendar', 'googlePlus', function($scope, $interval, googleLogin, googleCalendar, googlePlus) {
 
+    this.isLogin = function() {
+        var user = firebase.auth().currentUser;
+        if(user) {
+            console.log("AppController isLogin true.");
+            return true;
+        } else {
+            console.log("AppController isLogin false.");
+            return false;
+        }
+    };
+
     this.load = function(page) {
         console.log("AppController loading " + page);
         $scope.splitter.content.load(page);
@@ -40,7 +51,7 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
         // }
     };
     
-    this.currentUser = googleLogin.currentUser;
+    // this.currentUser = googleLogin.currentUser;
 
     this.logout = function() {
       // localStorage.setItem('user', null);
@@ -51,19 +62,22 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
     
     ons.ready(function() {
         // console.log("googleLogin = " + googleLogin);
-        
+/**        
         firebase.auth().onAuthStateChanged(function(user) {
             console.log("firebase.auth().onAuthStateChanged!");
           if (user) {
             console.log("login uid = " + user.uid);
             // ホーム画面に遷移
-            $scope.splitter.content.load('view/home.html');
+            // $scope.isLogin = true;
+            // $scope.splitter.content.load('view/home.html');
           } else {
             console.log("not logged in.");
             // ログイン画面に遷移
-            $scope.splitter.content.load('view/login.html');
+            // $scope.isLogin = false;
+            // $scope.splitter.content.load('view/login.html');
           } 
         });
+**/        
         console.log("AppController is ready!");
     });
     
