@@ -1,12 +1,14 @@
 myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'googleCalendar', 'googlePlus', function($scope, $interval, googleLogin, googleCalendar, googlePlus) {
 
+    this.currentTab = 0;
+
     this.isLogin = function() {
         var user = firebase.auth().currentUser;
         if(user) {
-            console.log("AppController isLogin true.");
+            // console.log("AppController isLogin true.");
             return true;
         } else {
-            console.log("AppController isLogin false.");
+            // console.log("AppController isLogin false.");
             return false;
         }
     };
@@ -33,6 +35,7 @@ myapp.controller('AppController', ['$scope', '$interval', 'googleLogin', 'google
     
     this.tabchange = function($event) {
         console.log("AppController tabchange is called tabid = " + $event.index);
+        this.currentTab = $event.index;
         // var user = null;
         // var userStr = localStorage.getItem('user');
         // if(userStr != null) {
